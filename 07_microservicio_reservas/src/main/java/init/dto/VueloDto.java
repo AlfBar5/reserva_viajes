@@ -1,0 +1,23 @@
+package init.dto;
+
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
+public class VueloDto {
+
+	
+	private int idvuelo;
+	private String company;
+	private String fecha;
+	private double precio;
+	private int plazas;
+	private String destino;
+	
+}
