@@ -21,12 +21,9 @@ public interface ReservasService {
 	
 	
 	
-	//Lista de reservas por cliente
-	List<ReservaDto> listaReservas(String usuario);
+	List<ReservaDto> reservasCliente(String usuario);
 	
-		
+	void reservar(ReservaDto dto,int plazas);
 	
-	// Alta de la misma con los datos de reserva
-	void altaReserva(ReservaDto reserva);
 
 }

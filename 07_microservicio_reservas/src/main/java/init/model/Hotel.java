@@ -34,9 +34,11 @@ public class Hotel {
 	private String disponible;
 	private String localizacion;
 	
+	/*
 	public String isDisponible() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	*/
 	
 }

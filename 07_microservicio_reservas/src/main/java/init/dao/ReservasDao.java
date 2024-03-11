@@ -19,6 +19,7 @@ Expone al menos los siguientes recursos, todos ellos de acceso libre:
 // Lista de reservas por cliente Microservicio de cliente
  
 */
+import init.model.Reserva;
 
 public interface ReservasDao extends JpaRepository<Reserva, Integer> {
 	

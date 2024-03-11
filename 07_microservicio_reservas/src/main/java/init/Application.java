@@ -2,6 +2,7 @@ package init;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestClient;
 
@@ -14,7 +15,18 @@ public class Application {
 
 	//La anotación @Bean hace que Spring pueda instanciar estos métodos configuración por defecto
 	@Bean
-	public RestClient getClient() {
+	@LoadBalanced
+	public RestClient.Builder getBuilder() {
+		return RestClient.builder();
+	}
+	
+	@Bean(name = "ribbonClient")
+	public RestClient getClient(RestClient.Builder builder) {
+		return builder.build();
+	}
+	@Bean(name = "noRibbonClient")
+	public RestClient getOtherClient() {
 		return RestClient.create();
 	}
+	
 }
